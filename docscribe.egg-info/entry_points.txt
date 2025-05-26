@@ -1,2 +1,0 @@
-[console_scripts]
-docscribe = docscribe.__main__:sync_main
