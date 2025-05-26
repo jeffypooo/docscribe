@@ -35,6 +35,7 @@ setup(
     ],
     python_requires=">=3.8",
     install_requires=requirements,
+    license_files=["LICENSE.txt"],
     entry_points={
         "console_scripts": [
             "docscribe=docscribe.__main__:sync_main",
