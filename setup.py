@@ -16,7 +16,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 setup(
     name="docscribe",
     version="1.0.0",
-    author="Jeffypoo",
+    author="jeff@jeffypoo.com",
     description="A documentation scraping agent that generates markdown programming guides focused on a topic",
     long_description=long_description,
     long_description_content_type="text/markdown",

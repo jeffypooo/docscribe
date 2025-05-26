@@ -25,12 +25,6 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-### As a Package
-
-```bash
-pip install docscribe
-```
-
 ## Usage
 
 ### As a Python Module
@@ -70,23 +64,6 @@ docscribe https://docs.python.org/3/ "async programming" -o python_guide
 ### Environment Variables
 
 - `OPENAI_API_KEY`: Required. Your OpenAI API key for accessing the AI models.
-
-### DocscribeConfig Options
-
-- `url`: The documentation website URL
-- `topic`: The topic to focus on
-- `model`: AI model to use (default: "o3")
-- `max_turns`: Maximum agent turns (default: 100)
-- `debug`: Enable debug logging (default: False)
-- `output_file`: Output filename without extension (optional)
-
-## Examples
-
-### Scraping Python Documentation
-
-```bash
-python -m docscribe https://docs.python.org/3/ "asyncio and coroutines" -o python_asyncio
-```
 
 ## Requirements
 
