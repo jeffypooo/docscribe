@@ -15,6 +15,7 @@ Classifier: Programming Language :: Python :: 3.11
 Classifier: Programming Language :: Python :: 3.12
 Requires-Python: >=3.8
 Description-Content-Type: text/markdown
+License-File: LICENSE.txt
 Requires-Dist: openai-agents==0.0.16
 Requires-Dist: httpx[http2]==0.28.1
 Requires-Dist: beautifulsoup4==4.13.4
@@ -24,19 +25,19 @@ Dynamic: author
 Dynamic: classifier
 Dynamic: description
 Dynamic: description-content-type
+Dynamic: license-file
 Dynamic: requires-dist
 Dynamic: requires-python
 Dynamic: summary
 
 # Docscribe
 
-A documentation scraping agent that generates comprehensive programming guides from documentation websites.
+A documentation scraping agent that generates markdown programming guides focused on a topic.
 
 ## Features
 
-- Scrapes documentation websites using intelligent web scraping
-- Generates comprehensive programming guides in Markdown format
-- Follows relevant links to gather complete information
+- Scrapes documentation websites using smart-ish web scraping
+- Generates  programming guides in Markdown format
 - Configurable AI model and scraping parameters
 - Can be run as a Python module or installed as a command-line tool
 
@@ -54,12 +55,6 @@ pip install -r requirements.txt
 
 # Install the package in development mode
 pip install -e .
-```
-
-### As a Package
-
-```bash
-pip install docscribe
 ```
 
 ## Usage
@@ -102,23 +97,6 @@ docscribe https://docs.python.org/3/ "async programming" -o python_guide
 
 - `OPENAI_API_KEY`: Required. Your OpenAI API key for accessing the AI models.
 
-### DocscribeConfig Options
-
-- `url`: The documentation website URL
-- `topic`: The topic to focus on
-- `model`: AI model to use (default: "o3")
-- `max_turns`: Maximum agent turns (default: 100)
-- `debug`: Enable debug logging (default: False)
-- `output_file`: Output filename without extension (optional)
-
-## Examples
-
-### Scraping Python Documentation
-
-```bash
-python -m docscribe https://docs.python.org/3/ "asyncio and coroutines" -o python_asyncio
-```
-
 ## Requirements
 
 - Python 3.8+
@@ -126,4 +104,4 @@ python -m docscribe https://docs.python.org/3/ "asyncio and coroutines" -o pytho
 
 ## License
 
-MIT License 
+This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE.txt) file for details. 
