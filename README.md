@@ -1,12 +1,11 @@
 # Docscribe
 
-A documentation scraping agent that generates comprehensive programming guides from documentation websites.
+A documentation scraping agent that generates markdown programming guides focused on a topic.
 
 ## Features
 
-- Scrapes documentation websites using intelligent web scraping
-- Generates comprehensive programming guides in Markdown format
-- Follows relevant links to gather complete information
+- Scrapes documentation websites using smart-ish web scraping
+- Generates  programming guides in Markdown format
 - Configurable AI model and scraping parameters
 - Can be run as a Python module or installed as a command-line tool
 
@@ -66,8 +65,6 @@ If you've installed the package, you can also use the `docscribe` command:
 docscribe https://docs.python.org/3/ "async programming" -o python_guide
 ```
 
-
-
 ### Programmatic Usage
 
 You can also use Docscribe programmatically in your Python code:
@@ -113,39 +110,10 @@ asyncio.run(main())
 python -m docscribe https://docs.python.org/3/ "asyncio and coroutines" -o python_asyncio
 ```
 
-### Scraping FastAPI Documentation
-
-```bash
-python -m docscribe https://fastapi.tiangolo.com/ "building REST APIs" -o fastapi_rest_guide
-```
-
-### Scraping with Debug Mode
-
-```bash
-python -m docscribe https://docs.openai.com/ "GPT models and API usage" --debug -o openai_guide
-```
-
-## Project Structure
-
-```
-docscribe/
-├── __init__.py          # Package initialization
-├── __main__.py          # Module entry point
-├── core.py              # Core functionality
-├── cli.py               # Command-line interface
-├── tools/               # Tools package
-│   ├── __init__.py
-│   └── scraper.py       # Web scraping tool
-├── setup.py             # Package setup
-├── requirements.txt     # Dependencies
-└── README.md           # This file
-```
-
 ## Requirements
 
 - Python 3.8+
 - OpenAI API key
-- Dependencies listed in requirements.txt
 
 ## License
 

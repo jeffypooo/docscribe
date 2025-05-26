@@ -8,7 +8,7 @@ try:
     with open("README.md", "r", encoding="utf-8") as fh:
         long_description = fh.read()
 except FileNotFoundError:
-    long_description = "A documentation scraping agent that generates comprehensive programming guides"
+    long_description = "A documentation scraping agent that generates markdown programming guides focused on a topic"
 
 with open("requirements.txt", "r", encoding="utf-8") as fh:
     requirements = [line.strip() for line in fh if line.strip() and not line.startswith("#")]
@@ -16,8 +16,8 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 setup(
     name="docscribe",
     version="1.0.0",
-    author="Docscribe Team",
-    description="A documentation scraping agent that generates comprehensive programming guides",
+    author="Jeffypoo",
+    description="A documentation scraping agent that generates markdown programming guides focused on a topic",
     long_description=long_description,
     long_description_content_type="text/markdown",
     packages=find_packages(),

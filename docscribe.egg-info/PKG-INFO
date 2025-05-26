@@ -1,8 +1,8 @@
 Metadata-Version: 2.4
 Name: docscribe
 Version: 1.0.0
-Summary: A documentation scraping agent that generates comprehensive programming guides
-Author: Docscribe Team
+Summary: A documentation scraping agent that generates markdown programming guides focused on a topic
+Author: jeff@jeffypoo.com
 Classifier: Development Status :: 4 - Beta
 Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved :: MIT License
@@ -96,36 +96,6 @@ If you've installed the package, you can also use the `docscribe` command:
 docscribe https://docs.python.org/3/ "async programming" -o python_guide
 ```
 
-### Legacy Usage
-
-For backward compatibility, you can still use the original main.py interface:
-
-```bash
-python main.py <url> <topic>
-```
-
-### Programmatic Usage
-
-You can also use Docscribe programmatically in your Python code:
-
-```python
-import asyncio
-from docscribe import run_docscribe, DocscribeConfig
-
-async def main():
-    config = DocscribeConfig(
-        url="https://docs.python.org/3/",
-        topic="async programming",
-        output_file="python_async_guide",
-        debug=True
-    )
-    
-    result = await run_docscribe(config)
-    print(result)
-
-asyncio.run(main())
-```
-
 ## Configuration
 
 ### Environment Variables
@@ -149,40 +119,10 @@ asyncio.run(main())
 python -m docscribe https://docs.python.org/3/ "asyncio and coroutines" -o python_asyncio
 ```
 
-### Scraping FastAPI Documentation
-
-```bash
-python -m docscribe https://fastapi.tiangolo.com/ "building REST APIs" -o fastapi_rest_guide
-```
-
-### Scraping with Debug Mode
-
-```bash
-python -m docscribe https://docs.openai.com/ "GPT models and API usage" --debug -o openai_guide
-```
-
-## Project Structure
-
-```
-docscribe/
-├── __init__.py          # Package initialization
-├── __main__.py          # Module entry point
-├── core.py              # Core functionality
-├── cli.py               # Command-line interface
-├── tools/               # Tools package
-│   ├── __init__.py
-│   └── scraper.py       # Web scraping tool
-├── main.py              # Legacy entry point
-├── setup.py             # Package setup
-├── requirements.txt     # Dependencies
-└── README.md           # This file
-```
-
 ## Requirements
 
 - Python 3.8+
 - OpenAI API key
-- Dependencies listed in requirements.txt
 
 ## License
 

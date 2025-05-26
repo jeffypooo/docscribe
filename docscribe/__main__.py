@@ -22,7 +22,6 @@ def parse_args() -> DocscribeConfig:
 Examples:
     python -m docscribe https://docs.python.org/3/ "async programming"
     python -m docscribe fastapi.tiangolo.com "API development" -o fastapi_guide
-    python -m docscribe docs.openai.com "GPT models" --debug --max-turns 50
         """
     )
     
