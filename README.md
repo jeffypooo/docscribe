@@ -65,28 +65,6 @@ If you've installed the package, you can also use the `docscribe` command:
 docscribe https://docs.python.org/3/ "async programming" -o python_guide
 ```
 
-### Programmatic Usage
-
-You can also use Docscribe programmatically in your Python code:
-
-```python
-import asyncio
-from docscribe import run_docscribe, DocscribeConfig
-
-async def main():
-    config = DocscribeConfig(
-        url="https://docs.python.org/3/",
-        topic="async programming",
-        output_file="python_async_guide",
-        debug=True
-    )
-    
-    result = await run_docscribe(config)
-    print(result)
-
-asyncio.run(main())
-```
-
 ## Configuration
 
 ### Environment Variables
