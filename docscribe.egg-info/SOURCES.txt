@@ -1,0 +1,15 @@
+README.md
+setup.py
+docscribe/__init__.py
+docscribe/__main__.py
+docscribe/cli.py
+docscribe/core.py
+docscribe.egg-info/PKG-INFO
+docscribe.egg-info/SOURCES.txt
+docscribe.egg-info/dependency_links.txt
+docscribe.egg-info/entry_points.txt
+docscribe.egg-info/not-zip-safe
+docscribe.egg-info/requires.txt
+docscribe.egg-info/top_level.txt
+docscribe/tools/__init__.py
+docscribe/tools/scraper.py

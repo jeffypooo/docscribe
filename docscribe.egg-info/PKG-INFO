@@ -1,0 +1,189 @@
+Metadata-Version: 2.4
+Name: docscribe
+Version: 1.0.0
+Summary: A documentation scraping agent that generates comprehensive programming guides
+Author: Docscribe Team
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: openai-agents==0.0.16
+Requires-Dist: httpx[http2]==0.28.1
+Requires-Dist: beautifulsoup4==4.13.4
+Requires-Dist: lxml==5.4.0
+Requires-Dist: pydantic==2.11.5
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Docscribe
+
+A documentation scraping agent that generates comprehensive programming guides from documentation websites.
+
+## Features
+
+- Scrapes documentation websites using intelligent web scraping
+- Generates comprehensive programming guides in Markdown format
+- Follows relevant links to gather complete information
+- Configurable AI model and scraping parameters
+- Can be run as a Python module or installed as a command-line tool
+
+## Installation
+
+### From Source
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd docscribe
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Install the package in development mode
+pip install -e .
+```
+
+### As a Package
+
+```bash
+pip install docscribe
+```
+
+## Usage
+
+### As a Python Module
+
+The recommended way to run Docscribe is as a Python module:
+
+```bash
+# Basic usage
+python -m docscribe <url> <topic>
+
+# With output file
+python -m docscribe https://docs.python.org/3/ "async programming" -o python_async_guide
+
+# With additional options
+python -m docscribe fastapi.tiangolo.com "API development" --debug --max-turns 50 -o fastapi_guide
+```
+
+### Command Line Options
+
+- `url`: The base URL of the documentation website to scrape
+- `topic`: The specific topic to focus on when generating the guide
+- `-o, --output`: Output filename for the generated guide (without .md extension)
+- `--model`: The AI model to use (default: o3)
+- `--max-turns`: Maximum number of agent turns (default: 100)
+- `--debug`: Enable debug logging
+
+### As an Installed Command
+
+If you've installed the package, you can also use the `docscribe` command:
+
+```bash
+docscribe https://docs.python.org/3/ "async programming" -o python_guide
+```
+
+### Legacy Usage
+
+For backward compatibility, you can still use the original main.py interface:
+
+```bash
+python main.py <url> <topic>
+```
+
+### Programmatic Usage
+
+You can also use Docscribe programmatically in your Python code:
+
+```python
+import asyncio
+from docscribe import run_docscribe, DocscribeConfig
+
+async def main():
+    config = DocscribeConfig(
+        url="https://docs.python.org/3/",
+        topic="async programming",
+        output_file="python_async_guide",
+        debug=True
+    )
+    
+    result = await run_docscribe(config)
+    print(result)
+
+asyncio.run(main())
+```
+
+## Configuration
+
+### Environment Variables
+
+- `OPENAI_API_KEY`: Required. Your OpenAI API key for accessing the AI models.
+
+### DocscribeConfig Options
+
+- `url`: The documentation website URL
+- `topic`: The topic to focus on
+- `model`: AI model to use (default: "o3")
+- `max_turns`: Maximum agent turns (default: 100)
+- `debug`: Enable debug logging (default: False)
+- `output_file`: Output filename without extension (optional)
+
+## Examples
+
+### Scraping Python Documentation
+
+```bash
+python -m docscribe https://docs.python.org/3/ "asyncio and coroutines" -o python_asyncio
+```
+
+### Scraping FastAPI Documentation
+
+```bash
+python -m docscribe https://fastapi.tiangolo.com/ "building REST APIs" -o fastapi_rest_guide
+```
+
+### Scraping with Debug Mode
+
+```bash
+python -m docscribe https://docs.openai.com/ "GPT models and API usage" --debug -o openai_guide
+```
+
+## Project Structure
+
+```
+docscribe/
+├── __init__.py          # Package initialization
+├── __main__.py          # Module entry point
+├── core.py              # Core functionality
+├── cli.py               # Command-line interface
+├── tools/               # Tools package
+│   ├── __init__.py
+│   └── scraper.py       # Web scraping tool
+├── main.py              # Legacy entry point
+├── setup.py             # Package setup
+├── requirements.txt     # Dependencies
+└── README.md           # This file
+```
+
+## Requirements
+
+- Python 3.8+
+- OpenAI API key
+- Dependencies listed in requirements.txt
+
+## License
+
+MIT License 
